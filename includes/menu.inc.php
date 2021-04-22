@@ -8,31 +8,34 @@
 		<div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
 			
 			<ul class="navbar-nav me-auto mb-2">
-				<li class="nav-item  mx-2">
-					<a class="nav-link  bg-primary  text-white" aria-current="page" href="index.php">Početna</a>
-				</li>
+				
 				<li class="nav-item">
 				<?php 
 						if(isset($_SESSION['status']))
 						{
+							$query="select * from menu_logged_in ";
 							
-							echo '<li class="nav-item  mx-2"><a class="nav-link bg-primary  text-white" href="logout.php">Odjavi se</a></li>';
 						}
 						else
 						{
-							echo '<li class="nav-item  mx-2"><a class="nav-link bg-primary  text-white" href="register.php">Registruj se</a></li>';
+							$query="select * from menu ";
 						}
 				?>
-				</li>
-				<li class="nav-item  mx-2">
-					<a class="nav-link text-white bg-primary  text-white" href="contact.php">Kontakt</a>
-				</li>
-				<li class="nav-item  mx-2">
-					<a class="nav-link bg-primary  text-white" href="aboutus.php">O nama</a>
-				</li>
-				<li class="nav-item  mx-2">
-					<a class="nav-link bg-primary  text-white" href="viewcart.php">Korpa</a>
-				</li>
+
+				<?php
+			
+	
+					$res=mysqli_query($conn,$query);
+						
+					while($row=mysqli_fetch_assoc($res))
+						{
+							echo '<li class="nav-item  mx-2"><a class="nav-link bg-primary  text-white" href="'.$row['href'].'">'.$row['link_name'].'</a></li>';
+							//pass catid not catnm
+						}
+	
+						mysqli_close($conn);
+				?>
+				
 			</ul>
 			<div class="d-flex flex-row bd-highlight">
 				<h1 class="text-primary mt-3">BOOK</h1>
