@@ -25,10 +25,19 @@
 			
 <!-- start page -->
 
-<div id="page">
+<div id="page" class="row">					
+	<!-- start sidebar -->
+	<div id="sidebar" class="col-3 bg-dark">
+			<?php
+				include("includes/search.inc.php");
+			?>
+	</div>
+	<!-- end sidebar -->
+
+
 	<!-- start content -->
-	<div id="content">
-		<div class="post">
+	<div id="content" class="col-9">
+		<div class="post bg-dark">
 			<h1 class="title">Dobrodošli  
 			<?php 
 				if(isset($_SESSION['status']))
@@ -37,29 +46,16 @@
 				}
 				else
 				{	
-					echo 'u BookShark knjižaru';
+					echo 'u BOOKSHARK knjižaru';
 				}
 			?>
 			</h1>
-			<div class="entry">
-				
-			</div>
-			
-		</div>
-		
+			<div class="entry">				
+			</div>			
+		</div>		
 	</div>
 	<!-- end content -->
-					
-	<!-- start sidebar -->
-	<div id="sidebar">
-			<?php
-				include("includes/search.inc.php");
-			?>
-	</div>
-	<!-- end sidebar -->
-		<div style="clear: both;">&nbsp;</div>
-				</div>
-			<!-- end page -->
+<!-- end page -->
 			
 	<!-- start footer -->
 		<div id="footer">

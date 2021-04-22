@@ -13,13 +13,6 @@ body {
 	color: #333333;
 }
 
-h1, h2, h3 {
-	margin: 0;
-	
-	font-weight: normal;
-	color: #559106;
-}
-
 h1 {
 	letter-spacing: -1px;
 	font-size: 32px;
@@ -31,18 +24,18 @@ h2 {
 
 
 a:link {
-	color: #4E8006;
-	
+	color:blue;
+	text-decoration: none;
 }
 
 a:hover, a:active {
 	text-decoration: none;
 
-	color: #4E8006;
+	color: #dc3545;
 }
 
 a:visited {
-	color: #4E8006;
+	color:#dc3545	;
 }
 
 img {
@@ -108,19 +101,10 @@ header{
 }
 
 /* Page */
-
-#page {
-	width: 850px;
-	margin: 0 auto;
+#page,#content{
+	--bs-gutter-x: 0 !important;
 }
 
-/* Content */
-
-#content {
-	float: right;
-	width: 620px;
-	
-}
 
 /* Post */
 
@@ -131,6 +115,7 @@ header{
 .post .title {
 	margin-bottom: 20px;
 	padding-bottom: 5px;
+	color:white;
 }
 
 .post h1 {
@@ -144,8 +129,12 @@ header{
 	color: #DADADA;
 }
 
-.post .entry {
-	padding: 0 15px;
+#content .entry {
+	padding: 50px 150px;
+}
+.regText{
+	font-size: 1.2em;
+	margin:0.5em;
 }
 
 .post .meta {
@@ -185,34 +174,31 @@ header{
 
 #sidebar {
 	float: left;
-	width: 215px;
+	--bs-gutter-x:0;
+	padding-top:3.5em;
 }
 
 #sidebar ul {
-	margin: 0;
-	padding: 0;
+	margin: 2em;
 	list-style: none;
 }
 
-#sidebar li {
-	margin-bottom: 40px;
-	padding: 0 15px;
-}
-
-#sidebar li ul {
+ul {
+padding-left: 0 !important;
 }
 
 #sidebar li li {
 	margin: 0;
-	padding-left: 15px;
-	background: url(images/img08.jpg) no-repeat left 50%;
+
 }
 
 #sidebar h2 {
-	height: 32px;
-	padding: 8px 0 0 15px;
-	margin-bottom: 10px;
-	background: url(images/img07.jpg) no-repeat left top;
+	width: 80%;
+	float: left;
+	border-radius: 0 15px 0 0;
+	padding:0.5em;
+	margin-bottom: 1em;
+	background-color: #dc3545;
 	font-size: 18px;
 	color: #DADADA;
 }
@@ -227,19 +213,23 @@ header{
 }
 
 #s {
-	width: 115px;
 	margin-right: 5px;
 	padding: 3px;
 	border: 1px solid #BED99C;
 }
 
 #x {
-	padding: 3px;
+	padding: 6px;
 	border: none;
-	background: #467805;
-	
-	font-size: 11px;
+	font-size: 0.8em;
 	color: #FFFFFF;
+	margin-left: 13em;
+	width: 7em;
+	margin-top:1em;
+}
+.searchInp{
+	width:14em;
+	margin-left: 2em;
 }
 
 /* Boxes */
