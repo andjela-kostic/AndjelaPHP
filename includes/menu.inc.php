@@ -33,7 +33,7 @@
 							//pass catid not catnm
 						}
 	
-						mysqli_close($conn);
+						
 				?>
 				
 			</ul>
