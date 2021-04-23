@@ -186,7 +186,7 @@
     /* var jsonString = JSON.stringify(podaciZaSlanje);
     console.log(jsonString); */
   $.ajax({
-     url:"includes/formCheck.php",
+     url:"includes/formCheckContact.php",
      method:"POST",
      data:podaciZaSlanje,
      dataType:"JSON",
