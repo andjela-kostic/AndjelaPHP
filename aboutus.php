@@ -37,14 +37,17 @@
 	<!-- start content -->
 	<div id="content" class="col-9">
 		<div class="post bg-dark">
-			<h1 class="title">About me</h1>
+			<h1 class="title">O autoru</h1>
 		</div>
-		<div class="entry" style="height:auto">
-							
-			We <a href="http://www.phptpoint.com">Phptpoint</a> are an online free PHP tutorial website for PHP interested candidates.<br/>
-			We are providing industry specific PHP tutorial designed for intermediate to advanced PHP levels of complexity.<br/> We are an Online Php Tutorial for Beginners as well as for active PHP programmers to learn and improve their knowledge about PHP, Mysql, cake php, codeigniter & joomla.
-			<br/>
-			The tutorial we provide comes easy and appropriate examples that give learner the ability to create powerful PHP based web applications very quickly.
+		<div class="entry row" style="height:auto">
+			<div class='col-12'>
+				<img src='images/ak.jpg'/>
+			</div>				
+			<div class='col-12'>
+				<p class="h3 mt-2">Andjela Kostic 51/19</p>
+				<p class="h4">Visoka ICT</p>
+				<a class="h5" href="https://andjela-kostic.github.io/portfolio2021/">Portfolio</a>
+			</div>	
 		</div>
 		</div>
 	<!-- end content -->
