@@ -40,56 +40,54 @@ require('includes/config.php');
 			
 			<!-- start page -->
 
-				<div id="page">
-					<!-- start content -->
-							<div id="content">
-								<div class="post">
-									<h1 class="title"><?php echo @$_GET['cat'];?></h1>
-									<div class="entry">
-										
-										<table border="3" width="100%" >
-											<?php
-												$count=0;
-												while($row=mysqli_fetch_assoc($res1))
-												{
-													if($count==0)
-													{
-														echo '<tr>';
-													}
-													
-													echo '<td valign="top" width="20%" align="center">
-														<a href="detail.php?id='.$row['b_id'].'">
-														<img src="'.$row['b_img'].'" width="80" height="100">
-														<br>'.$row['b_nm'].'</a>
-													</td>';
-													$count++;							
-													
-													if($count==4)
-													{
-														echo '</tr>';
-														$count=0;
-													}
-												}
-											?>
-											
-										</table>
-									</div>
-									
-								</div>
-								
-							</div>
-					<!-- end content -->
-					
-					<!-- start sidebar -->
-							<div id="sidebar">
-									<?php
-										include("includes/search.inc.php");
-									?>
-							</div>
-					<!-- end sidebar -->
-					<div style="clear: both;">&nbsp;</div>
-				</div>
-			<!-- end page -->
+				<!-- start page -->
+
+<div id="page" class="row">					
+	<!-- start sidebar -->
+	<div id="sidebar" class="col-3 bg-dark">
+		<?php
+			include("includes/search.inc.php");
+		?>
+	</div>
+	<!-- end sidebar -->
+
+	<!-- start content -->
+
+	<div id="content" class="col-9">
+		<div class="post bg-dark">
+			<h1 class="title"><?php echo @$_GET['cat'];?></h1>
+			<div class="entry">				
+				<table border="3" width="100%" >
+					<?php
+						$count=0;
+						while($row=mysqli_fetch_assoc($res1))
+						{
+							if($count==0)
+							{
+								echo '<tr>';
+							}
+							
+							echo '<td valign="top" width="20%" align="center">
+								<a href="detail.php?id='.$row['b_id'].'">
+								<img src="'.$row['b_img'].'" width="80" height="100">
+								<br>'.$row['b_nm'].'</a>
+							</td>';
+							$count++;							
+							
+							if($count==4)
+							{
+								echo '</tr>';
+								$count=0;
+							}
+						}
+					?>
+				</table>
+			</div>									
+		</div>								
+	</div>
+</div>
+<!-- end content -->					
+<!-- end page -->
 			
 				
 			<!-- start footer -->
