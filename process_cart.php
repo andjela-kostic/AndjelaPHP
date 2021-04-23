@@ -1,9 +1,9 @@
 <?php session_start();
 
-	if(isset($_GET['nm']) and isset($_GET['cat']) and isset($_GET['rate']))
+	if(isset($_GET['nm']) and isset($_GET['rate']))
 	{
 		//add item
-		$_SESSION['cart'][] = array("nm"=>$_GET['nm'],"cat"=>$_GET['cat'],"rate"=>$_GET['rate'],"qty"=>"1");
+		$_SESSION['cart'][] = array("nm"=>$_GET['nm'],"rate"=>$_GET['rate'],"qty"=>"1");
 		header("location: viewcart.php");
 	}
 	else if(isset($_GET['id']))

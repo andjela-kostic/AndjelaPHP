@@ -45,63 +45,68 @@ require('includes/config.php');
 				<pre><?php
 				//	print_r($_SESSION);
 				?></pre>
-			
-				<form action="process_cart.php" method="POST">
-				<table width="100%" border="0">
-					<tr >
-						<Td> <b>ID
-						<td> <b>Kategorija
-						<td> <b>Proizvod
-						<td> <b>Količina
-						<td> <b>Rate
-						<td> <b>Cena
-						<td> <b>Obriši
-					</tr>
-					<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-				
-					<?php
-						$tot = 0;
-						$i = 1;
-						if(isset($_SESSION['cart'])){
-							foreach($_SESSION['cart'] as $id=>$x){	
-								echo '
-									<tr>
-									<Td> '.$i.'
-									<td> '.$x['cat'].'
-									<td> '.$x['nm'].'
-									<td> <input type="text" size="2" value="'.$x['qty'].'" name="'.$id.'">
-									<td> '.$x['rate'].'
-									<td> '.($x['qty']*$x['rate']).'
-									<td> <a href="process_cart.php?id='.$id.'">Obriši</a>
-								</tr>
-								';
-								
-								$tot = $tot + ($x['qty']*$x['rate']);
-								$i++;
-							}
-						}
-					
-					?>
-				<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-					
-				<tr>
-				<td colspan="6" align="right">
-				<h4>Ukupno:</h4>
-				
-				</td>
-				<td> <h4><?php echo $tot; ?> </h4></td>
-				</tr>
-				<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-				
-				<Br>
-					</table>						
+				<?php if(!isset($_SESSION['cart'])){echo 'Vaša korpa je trenutno prazna!';} 
 
-					<br><br>
-				<center>
-				<input type="submit" value=" Izračunaj " > 
-				<a href="checkout.php">Potvrdi i nastavi<a/>
-				</center>
-				</form>
+				else{
+						echo '<form action="process_cart.php" method="POST">
+						<table width="100%" border="0">
+							<tr >
+								<td> ID</td>
+								<td> Kategorija</td>
+								<td> Proizvod</td>
+								<td> Količina</td>
+								<td> Rate</td>
+								<td> Cena</td>
+								<td>Obriši</td>
+							</tr>
+							<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>';
+						
+							
+								$tot = 0;
+								$i = 1;
+								if(isset($_SESSION['cart'])){
+									foreach($_SESSION['cart'] as $id=>$x){	
+										echo '
+											<tr>
+											<Td> '.$i.'
+											<td> '.$x['nm'].'
+											<td> <input type="text" size="2" value="'.$x['qty'].'" name="'.$id.'">
+											<td> '.$x['rate'].'
+											<td> '.($x['qty']*$x['rate']).'
+											<td> <a href="process_cart.php?id='.$id.'#content">Obriši</a>
+										</tr>
+										';
+										
+										$tot = $tot + ($x['qty']*$x['rate']);
+										$i++;
+									}
+								}
+								echo '<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
+					
+								<tr>
+								<td colspan="6" align="right">
+								<h4>Ukupno:</h4>
+								
+								</td>
+								<td> <h4>';
+								echo @$tot; echo'</h4></td>
+								</tr>
+								<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
+								
+								<Br>
+									</table>						
+				
+									<br><br>
+								<center>
+									<input class="btn btn-danger text-white" type="submit" value=" Izračunaj " > 
+									<a class="btn btn-primary text-white" href="checkout.php#content">Potvrdi i nastavi</a>
+								</center>
+								</form>';
+				}
+				
+				
+					?>
+				
 				</div>
 				
 			

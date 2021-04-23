@@ -58,7 +58,7 @@ require('includes/config.php');
 				while($row2=mysqli_fetch_assoc($res4))
 				{							
 					echo '<div class="card col-3 mb-4" style="width: 13rem;">
-							<a href="detail.php?id='.$row2['b_id'].'">
+							<a href="detail.php?id='.$row2['b_id'].'#content">
 							<img src="'.$row2['b_img'].'" class="card-img-top"/>
 							<br>'.$row2['b_nm'].'</a>
 						</div>';

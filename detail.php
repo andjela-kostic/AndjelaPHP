@@ -154,13 +154,13 @@
 						
 						if(isset($_SESSION['status']))
 						{
-						echo ' <td><a href="process_cart.php?nm='.$row1['b_nm'].'&cat='.$_GET['cat'].'&rate='.$row1['b_price'].'">
-							<img src="images/addcart.jpg">
+						echo ' <td><a href="process_cart.php?nm='.$row1['b_nm'].'&rate='.$row1['b_price'].'#content">
+						<i class="fas fa-cart-plus"></i> Dodaj u korpu
 						</a></td>';
 					}
 					else
 					{
-						echo '<td><img src="images/addcart.jpg"><br><a href="register.php"> <h4>Da biste kupili ovaj proizvod, molimo, ulogujte se.</h4></a></td>';
+						echo '<td><i class="fas fa-cart-plus"></i><br><a href="register.php"> <h4>Da biste kupili ovaj proizvod, molimo, ulogujte se.</h4></a></td>';
 					}
 					echo '</tr>
 				</table>';
