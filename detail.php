@@ -5,8 +5,8 @@
 	
 	$q="select * from book where b_id=$id";
 	
-	$res=mysqli_query($conn,$q) or die("Can't Execute Query..");
-	$row=mysqli_fetch_assoc($res);
+	$res6=mysqli_query($conn,$q) or die("Can't Execute Query..");
+	$row1=mysqli_fetch_assoc($res6);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -47,7 +47,7 @@
 						<!-- start content -->
 							<div id="content">
 								<div class="post">
-									<h1 class="title"><?php echo $row['b_nm'];?></h1>
+									<h1 class="title"><?php echo $row1['b_nm'];?></h1>
 									<div class="entry">
 										<?php
 										
@@ -67,7 +67,7 @@
 												<tr> 
 													
 													<td width="15%" rowspan="3">
-														<img src="'.$row['b_img'].'" width="100">
+														<img src="'.$row1['b_img'].'" width="100">
 													
 													</td>
 												</tr>
@@ -78,14 +78,14 @@
 															<tr valign="top">
 																<td align="right" width="10%">NAME</td>
 																<td width="6%">: </td>
-																<td align="left">'.$row['b_nm'].'</td>
+																<td align="left">'.$row1['b_nm'].'</td>
 															</tr>
 
 															
 															<tr>
 																<td align="right">ISBN</td>
 																<td>: </td>
-																<td align="left">'.$row['b_isbn'].'</td>
+																<td align="left">'.$row1['b_isbn'].'</td>
 																
 															</tr>
 															
@@ -93,27 +93,27 @@
 															<tr>
 																<td align="right">Publisher </td>
 																<td>: </td>
-																<td align="left">'.$row['b_publisher'].'</td>
+																<td align="left">'.$row1['b_publisher'].'</td>
 																
 															</tr>											
 															
 															<tr>
 																<td align="right"> Izdanje </td>
 																<td> : </td>
-																<td align="left">'.$row['b_edition'].'</td>
+																<td align="left">'.$row1['b_edition'].'</td>
 																
 															</tr>
 															
 															<tr>
 																<td align="right">  Broj strana </td>
 																<td> : </td>
-																<td align="left">'.$row['b_page'].'</td>
+																<td align="left">'.$row1['b_page'].'</td>
 															</tr>
 															
 															<tr>
 																<td align="right"> Cena </td>
 																<td> : </td>
-																<td align="left">'.$row['b_price'].'</td>
+																<td align="left">'.$row1['b_price'].'</td>
 															</tr>
 														</table>
 										
@@ -122,11 +122,7 @@
 												</tr>
 											</table>
 										
-												<tr valign="bottom" >
-												
-														<a href="'.$row['b_img'].'" rel="lightbox"><img src="images/zoom.gif" ></a>
-													
-												</tr>
+											
 											
 											<table border="0" width="100%">
 												 <tr>
@@ -141,7 +137,7 @@
 																		
 											 </table>
 											 
-											 '.$row['b_desc'].'
+											 '.$row1['b_desc'].'
 																				
 
 											 
@@ -153,7 +149,7 @@
 												 
 												 if(isset($_SESSION['status']))
 												 {
-													echo ' <td><a href="process_cart.php?nm='.$row['b_nm'].'&cat='.$_GET['cat'].'&rate='.$row['b_price'].'">
+													echo ' <td><a href="process_cart.php?nm='.$row1['b_nm'].'&cat='.$_GET['cat'].'&rate='.$row1['b_price'].'">
 														<img src="images/addcart.jpg">
 													</a></td>';
 												}
