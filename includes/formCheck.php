@@ -16,6 +16,33 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $regPassword='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/';
     $regNumber='/[^a-z ]\ *([.0-9])*\d/';
     $br=0;
+    $i=0;
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $message=$_POST['message'];
+    if(isset($name)){
+        if(!preg_match($regUsername,$name)){
+            $i++;
+            $msg='Ime nije dobro uneto';
+        }
+        if(!preg_match($regEmail,$email))
+            {$i++;
+                $msg='Mejl nije dobro unet';
+            }
+            if($i==0){
+                $status=1;
+                 $msg="Registracija uspešna, možete se ulogovati !";
+            $query=mysqli_query($conn,"insert into contact(con_nm,con_email,con_query) values('$name','$email','$message')");
+            echo $msg;
+            die;
+            }
+            else{
+                $status=422;
+                echo $msg;
+            }
+            echo json_encode($msg);
+            http_response_code($status);
+    }
     if(!preg_match($regUsername,$fullname))
     { $br++;
         $msg='Ime nije dobro uneto';

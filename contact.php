@@ -47,20 +47,20 @@ require('includes/config.php');
 				<form action="process_contact.php" method="POST">						
 					<div>
 						<p class="regText">Ime i prezime:</p>
-						<input type='text' name='nm' size=35>
+						<input type='text' id="fnm" onBlur="regEx(this.value,this.id);" name='nm' size=35><p></p>
 					</div>
 						
 					<div class="py-4">
 						<p class="regText">Vaš mejl:</p>
-						<input type='text' name='email' size=35>
+						<input type='text' id="mail" onBlur="regEx(this.value,this.id);" name='email' size=35><p></p>
 					</div>
 						
 					<div>
 						<p class="regText">Poruka:</p>
-						<textarea cols="40" rows="10" name='query' ></textarea>
+						<textarea cols="40" id="message" onBlur="regEx(this.value,this.id);" rows="10" name='query' ></textarea><p></p>
 					</div>
 
-						<input class="btn btn-success my-5" type='submit' name='btn' value='   Pošalji   '  >
+						<input class="btn btn-success my-5" onclick="slanje_kontakt()" id="submit" type='submit' name='btn' value='   Pošalji   '  >
 
 						
 				</form>
@@ -81,5 +81,6 @@ require('includes/config.php');
 							?>
 				</div>
 			<!-- end footer -->
+			<script src="js/regex.js" type="text/javascript"></script>
 </body>
 </html>

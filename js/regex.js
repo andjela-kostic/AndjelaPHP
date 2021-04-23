@@ -110,6 +110,23 @@
        else if(id=="unm"){
            username=vrednost;
        }
+       else if(id=="message"){
+           if(vrednost!=''){
+            polje.nextElementSibling.innerHTML='';
+            document.getElementById('submit').disabled = false; 
+             polje.classList.remove("alert","alert-danger")
+            polje.classList.add("alert","alert-success")
+            poruka=vrednost;
+           }
+           else{
+            polje.nextElementSibling.innerHTML="<span class='text text-warning'>Napišite makar nešto!</span>";
+            var disableSelection =document.getElementById("submit")
+            disableSelection.setAttribute("disabled","true");
+            polje.classList.add("alert","alert-danger")
+            br++;
+           }
+           
+       }
     }
       
     
@@ -158,5 +175,33 @@
          window.location.href = 'index.php';
       }, 1000);
    }
-   
+   function slanje_kontakt(){
+    podaciZaSlanje={
+       "name":ime,
+       "email":mejl,
+       "message":poruka,
+    };
+    console.log('usli smo u ajax pitanje');
+    console.log(podaciZaSlanje);
+    /* var jsonString = JSON.stringify(podaciZaSlanje);
+    console.log(jsonString); */
+  $.ajax({
+     url:"includes/formCheck.php",
+     method:"POST",
+     data:podaciZaSlanje,
+     dataType:"JSON",
+     success:function(result){
+         console.log('uspeh');
+         
+     },
+     error:function(xhr){
+       //  console.error(xhr);
+     }
+   });
+   document.getElementById("registration").innerHTML="Uspešno ste poslali Vašu poruku!";
+   setTimeout(function(){
+
+    window.location.href = 'contact.php';
+ }, 1000);
+}
   

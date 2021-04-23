@@ -6,6 +6,6 @@ require('includes/config.php');
 			mysqli_query($conn,$query) or die("can't Execute...");
 			
 			
-			header("location:all_book.php.php");
+			header("location:all_book.php");
 
 ?>
