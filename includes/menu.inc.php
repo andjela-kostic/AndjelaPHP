@@ -7,7 +7,7 @@
 		</button>
 		<div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
 			
-			<ul class="navbar-nav me-auto mb-2">
+			<ul class="navbar-nav me-auto mb-2 ">
 				
 				<li class="nav-item">
 				<?php 
@@ -29,7 +29,7 @@
 						
 					while($row=mysqli_fetch_assoc($res))
 						{
-							echo '<li class="nav-item  mx-2"><a class="nav-link bg-primary  text-white" href="'.$row['href'].'">'.$row['link_name'].'</a></li>';
+							echo '<li class="nav-item    mx-2"><a class="nav-link bg-primary  text-white" href="'.$row['href'].'">'.$row['link_name'].'</a></li>';
 							//pass catid not catnm
 						}
 	

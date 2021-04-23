@@ -7,9 +7,9 @@ require('includes/config.php');
 	$cat=$_GET['cat_nm'];
 	
 	$q = "select * from subcat where parent_id = ".$_GET['cat'];
-	$res = mysqli_query($conn,$q) or die("Can't Execute Query..");
+	$res5 = mysqli_query($conn,$q) or die("Can't Execute Query..");
 	
-	$row1 = mysqli_fetch_assoc($res);
+	$row1 = mysqli_fetch_assoc($res5);
 	
 	if($_GET['catnm']==$row1['subcat_nm'])
 	{

@@ -5,9 +5,9 @@ require('includes/config.php');
 	
 	
 	$search=$_GET['s'];
-	$query="select *from book where b_nm like '%$search%'";
+	$query="select * from book where b_nm like '%$search%'";
 	
-	$res=mysqli_query($conn,$query) or die("Can't Execute Query...");
+	$res1=mysqli_query($conn,$query) or die("Can't Execute Query...");
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -50,7 +50,7 @@ require('includes/config.php');
 										<table border="3" width="100%" >
 											<?php
 												$count=0;
-												while($row=mysqli_fetch_assoc($res))
+												while($row=mysqli_fetch_assoc($res1))
 												{
 													if($count==0)
 													{

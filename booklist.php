@@ -78,10 +78,10 @@ require('includes/config.php');
 											
 												$query="select *from book where b_subcat='$cat' LIMIT ".$k .",".$page_per_page;
 	
-												$res=mysqli_query($conn,$query) or die("Can't Execute Query...");
-	
+												$res4=mysqli_query($conn,$query) or die("Can't Execute Query...");
+												echo $res;
 												$count=0;
-												while($row=mysqli_fetch_assoc($res))
+												while($row=mysqli_fetch_assoc($res4))
 												{
 													if($count==0)
 													{

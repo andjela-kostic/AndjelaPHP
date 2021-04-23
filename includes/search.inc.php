@@ -39,9 +39,9 @@
 
 				$query="select * from category ";
 
-				$res=mysqli_query($conn,$query);
+				$res3=mysqli_query($conn,$query);
 					
-				while($row=mysqli_fetch_assoc($res))
+				while($row=mysqli_fetch_assoc($res3))
 					{
 						echo '<li><a href="subcat.php?cat='.$row['cat_id'].'&catnm='.$row["cat_nm"].'">'.$row["cat_nm"].'</a></li>';
 						//pass catid not catnm
